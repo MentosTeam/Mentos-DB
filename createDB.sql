@@ -43,9 +43,14 @@ CREATE TABLE `MENTI` (
     `mentiUpdateAt` timestamp  NOT NULL DEFAULT current_timestamp
 );
 
-/*CREATE TABLE `SCHOOLCATEGORY` (
-
-);*/
+CREATE TABLE `SCHOOLCATEGORY` (
+    `schoolId` int NOT NULL,
+    `schoolName` varchar(10) NOT NULL,
+    `schoolEmail` varchar(30) NOT NULL,
+    PRIMARY KEY (
+        `schoolId`
+    )
+);
 
 CREATE TABLE `MAJORCATEGORY` (
     `majorCategoryId` int  NOT NULL ,
@@ -143,4 +148,3 @@ REFERENCES `MENTORING` (`mentoringId`);
 
 ALTER TABLE `REVIEW` ADD CONSTRAINT `fk_REVIEW_mentoringId` FOREIGN KEY(`mentoringId`)
 REFERENCES `MENTORING` (`mentoringId`);
-
