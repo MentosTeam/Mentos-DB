@@ -11,10 +11,10 @@ CREATE TABLE `MEMBER` (
     `memberEmail` varchar(30)  NOT NULL ,
     `memberPw` text  NOT NULL ,
     `memberSchoolId` int  NOT NULL ,
-    `memberMajor` varchar(20)  NOT NULL ,
+    `memberMajor` varchar(20)  NOT NULL DEFAULT '전공명을 입력해주세요' ,
     `memberSex` varchar(5)  NOT NULL ,
     `memberMentos` int  NOT NULL DEFAULT 0,
-    `memberStatus` varchar(10)  NOT NULL DEFAULT active,
+    `memberStatus` varchar(10)  NOT NULL DEFAULT 'active',
     `memberCreateAt` timestamp  NOT NULL DEFAULT current_timestamp,
     `memberUpdateAt` timestamp  NOT NULL DEFAULT current_timestamp,
     PRIMARY KEY (
@@ -71,6 +71,7 @@ CREATE TABLE `MAJORCATEGORY` (
 
 CREATE TABLE `POST` (
     `postId` int AUTO_INCREMENT NOT NULL ,
+    `majorCategoryId` int NOT NULL,
     `memberId` int  NOT NULL ,
     `postTitle` text  NOT NULL ,
     `postContents` text  NOT NULL ,
