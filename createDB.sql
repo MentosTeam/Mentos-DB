@@ -81,7 +81,6 @@ CREATE TABLE `POST` (
 CREATE TABLE `IMAGE` (
     `imageId` int AUTO_INCREMENT NOT NULL ,
     `postId` int  NOT NULL ,
-    `imageName` text NOT NULL,
     `imageUrl` text  NOT NULL ,
     PRIMARY KEY (
         `imageId`
