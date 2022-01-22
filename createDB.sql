@@ -1,7 +1,3 @@
-﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
--- Link to schema: https://app.quickdatabasediagrams.com/#/d/0wfD1R
--- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
-
 
 CREATE TABLE `MEMBER` (
     `memberId` int AUTO_INCREMENT NOT NULL ,
@@ -85,6 +81,7 @@ CREATE TABLE `POST` (
 CREATE TABLE `IMAGE` (
     `imageId` int AUTO_INCREMENT NOT NULL ,
     `postId` int  NOT NULL ,
+    `imageName` text NOT NULL,
     `imageUrl` text  NOT NULL ,
     PRIMARY KEY (
         `imageId`
