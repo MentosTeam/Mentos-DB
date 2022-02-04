@@ -12,7 +12,7 @@ CREATE TABLE `MEMBER` (
     `memberMentos` int  NOT NULL DEFAULT 0,
     `memberStatus` varchar(10)  NOT NULL DEFAULT 'active',
     `memberCreateAt` timestamp  NOT NULL DEFAULT current_timestamp,
-    `memberUpdateAt` timestamp  NOT NULL DEFAULT current_timestamp,
+    `memberUpdateAt` timestamp  NOT NULL DEFAULT current_timestamp ON UPDATE current_timestamp,
     PRIMARY KEY (
         `memberId`
     ),
@@ -28,21 +28,21 @@ CREATE TABLE `MENTO` (
     `memberId` int  NOT NULL ,
     `mentoMajorFirst` int  NOT NULL ,
     `mentoMajorSecond` int  NULL ,
-    `mentoImage` text  NOT NULL ,
+    `mentoImage` text ,
     `mentoScore` double  NOT NULL DEFAULT 0,
     `mentoIntro` text  NOT NULL ,
     `mentoCreateAt` timestamp  NOT NULL DEFAULT current_timestamp,
-    `mentoUpdateAt` timestamp  NOT NULL DEFAULT current_timestamp
+    `mentoUpdateAt` timestamp  NOT NULL DEFAULT current_timestamp ON UPDATE current_timestamp
 );
 
 CREATE TABLE `MENTI` (
     `memberId` int  NOT NULL ,
     `mentiMajorFirst` int  NOT NULL ,
     `mentiMajorSecond` int  NULL ,
-    `mentiImage` text  NOT NULL ,
+    `mentiImage` text ,
     `mentiIntro` text  NOT NULL ,
     `mentiCreateAt` timestamp  NOT NULL DEFAULT current_timestamp,
-    `mentiUpdateAt` timestamp  NOT NULL DEFAULT current_timestamp
+    `mentiUpdateAt` timestamp  NOT NULL DEFAULT current_timestamp ON UPDATE current_timestamp
 );
 
 CREATE TABLE `SCHOOLCATEGORY` (
@@ -70,7 +70,7 @@ CREATE TABLE `POST` (
     `postTitle` text  NOT NULL ,
     `postContents` text  NOT NULL ,
     `postCreateAt` timestamp  NOT NULL DEFAULT current_timestamp,
-    `postUpdateAt` timestamp  NOT NULL DEFAULT current_timestamp,
+    `postUpdateAt` timestamp  NOT NULL DEFAULT current_timestamp ON UPDATE current_timestamp,
     PRIMARY KEY (
         `postId`
     )
@@ -95,7 +95,7 @@ CREATE TABLE `MENTORING` (
     -- 0==prev, 1==~ing 2=fin
     `mentoringStatus` int  NOT NULL DEFAULT 0,
     `mentoringCreateAt` timestamp  NOT NULL DEFAULT current_timestamp,
-    `mentoringUpdateAt` timestamp  NOT NULL DEFAULT current_timestamp,
+    `mentoringUpdateAt` timestamp  NOT NULL DEFAULT current_timestamp ON UPDATE current_timestamp,
     PRIMARY KEY (
         `mentoringId`
     )
@@ -103,11 +103,10 @@ CREATE TABLE `MENTORING` (
 
 CREATE TABLE `REPORT` (
     `reportId` int AUTO_INCREMENT NOT NULL ,
-    `reportDate` varchar(10)  NOT NULL ,
     `reportText` text  NOT NULL ,
     `mentoringId` int  NOT NULL ,
     `reportCreateAt` timestamp  NOT NULL DEFAULT current_timestamp,
-    `reportUpdateAt` timestamp  NOT NULL DEFAULT current_timestamp,
+    `reportUpdateAt` timestamp  NOT NULL DEFAULT current_timestamp ON UPDATE current_timestamp,
     PRIMARY KEY (
         `reportId`
     )
@@ -119,7 +118,7 @@ CREATE TABLE `REVIEW` (
     `reviewText` text  NOT NULL ,
     `reviewScore` double  NOT NULL ,
     `reviewCreateAt` timestamp  NOT NULL DEFAULT current_timestamp,
-    `reviewUpdateAt` timestamp  NOT NULL DEFAULT current_timestamp,
+    `reviewUpdateAt` timestamp  NOT NULL DEFAULT current_timestamp ON UPDATE current_timestamp,
     PRIMARY KEY (
         `reviewId`
     )
