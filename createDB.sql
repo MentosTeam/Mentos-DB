@@ -57,7 +57,7 @@ CREATE TABLE `SCHOOLCATEGORY` (
 CREATE TABLE `MAJORCATEGORY` (
     `majorCategoryId` int AUTO_INCREMENT NOT NULL ,
     `majorName` varchar(10)  NOT NULL ,
-    `majorImgUrl` text  NOT NULL ,
+    `majorImgUrl` text  NULL ,
     PRIMARY KEY (
         `majorCategoryId`
     )
