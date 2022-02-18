@@ -123,13 +123,13 @@ CREATE TABLE `REVIEW` (
         `reviewId`
     )
 );
-CREATE TABLE `DEVICETOKEN` (
+CREATE TABLE `USERDEVICE` (
     `deviceId` int  AUTO_INCREMENT NOT NULL ,
     `memberId` int  NULL ,
     `deviceToken` varchar(100) ,
     `mentoCreateAt` timestamp  NOT NULL DEFAULT current_timestamp,
     `mentoUpdateAt` timestamp  NOT NULL DEFAULT current_timestamp ON UPDATE current_timestamp,
-    `deleteFlag` int NOT NULL DEFAULT 0
+    `deleteFlag` int NOT NULL DEFAULT 0,
     PRIMARY KEY (
         `deviceId`
     )
