@@ -134,3 +134,13 @@ CREATE TABLE `DEVICETOKEN` (
         `deviceId`
     )
 );
+
+CREATE TABLE `NOTICE` (
+    `noticeId` int AUTO_INCREMENT NOT NULL ,
+    `content` text  NOT NULL ,
+    `createAt` timestamp  NOT NULL DEFAULT current_timestamp,
+    `updateAt` timestamp  NOT NULL DEFAULT current_timestamp,
+    PRIMARY KEY (
+        `noticeId`
+    )
+);
