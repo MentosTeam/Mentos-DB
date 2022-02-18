@@ -130,4 +130,7 @@ CREATE TABLE `DEVICETOKEN` (
     `mentoCreateAt` timestamp  NOT NULL DEFAULT current_timestamp,
     `mentoUpdateAt` timestamp  NOT NULL DEFAULT current_timestamp ON UPDATE current_timestamp,
     `deleteFlag` int NOT NULL DEFAULT 0
+    PRIMARY KEY (
+        `deviceId`
+    )
 );
