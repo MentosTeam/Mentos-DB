@@ -144,3 +144,14 @@ CREATE TABLE `NOTICE` (
         `noticeId`
     )
 );
+CREATE TABLE `NOTIFICATION` (
+    `notificationId` int AUTO_INCREMENT NOT NULL ,
+    `memberId` int NOT NULL,
+    `statusFlag` int NOT NULL,
+    `content` text  NOT NULL ,
+    `createAt` timestamp  NOT NULL DEFAULT current_timestamp,
+    `updateAt` timestamp  NOT NULL DEFAULT current_timestamp,
+    PRIMARY KEY (
+        `notificationId`
+    )
+);
