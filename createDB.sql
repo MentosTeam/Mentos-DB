@@ -96,6 +96,7 @@ CREATE TABLE `MENTORING` (
     `mentoringMentiId` int  NOT NULL ,
     -- 0==prev, 1==~ing 2=fin
     `mentoringStatus` int  NOT NULL DEFAULT 0,
+    `mentoringDeleteFlag` int NOT NULL DEFAULT 0,
     `mentoringCreateAt` timestamp  NOT NULL DEFAULT current_timestamp,
     `mentoringUpdateAt` timestamp  NOT NULL DEFAULT current_timestamp ON UPDATE current_timestamp,
     PRIMARY KEY (
